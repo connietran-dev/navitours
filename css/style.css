@@ -51,6 +51,7 @@ body {
     height: 35px;
 }
 
+/* Text box in header */
 .text-box {
     position: absolute;
 
@@ -65,6 +66,7 @@ body {
     text-align: center;
 }
 
+/* h1 */
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
@@ -75,6 +77,7 @@ body {
     margin-bottom: 60px; 
 }
 
+/* "Outdoors" */
 .heading-primary-main {
     display: block;
     font-size: 60px;
@@ -92,13 +95,14 @@ body {
     */
 }
 
+/* "is where life happens" */
 .heading-primary-sub {
     display: block;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
 
-    /* Variation of declaring variation properties */
+    /* Shorthand for delcaring animation properties */
     animation: moveInRight 2s ease-in;
 }
 
@@ -141,6 +145,20 @@ body {
     }
 }
 
+@keyframes moveInBottom {
+    /* Before moving in */
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    /* After animation */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 .btn:link,
 .btn:visited {
     text-transform: uppercase;
@@ -152,6 +170,8 @@ body {
     /* Enable all properties for animation on initial btn state */
     /* Enables smooth animations */
     transition: all .2s;
+
+    position: relative;
 }
 
 .btn:hover {
@@ -166,4 +186,41 @@ body {
 .btn-white {
     background-color: #fff;
     color: #777;
+}
+
+.btn::after {
+    content: "";
+
+    /* Make the same as button */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+
+    /* Position behind button */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    transition: all 0.4s;
+}
+
+/* Also create pseudo element for .btn-white */
+.btn-white::after {
+    background-color: #fff;
+}
+
+/* On button :hover, display ::after effects */
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    /* Include .75s delay */
+    animation: moveInBottom .5s ease-out .75s;
+
+    /* Start 0% keyframe before animation begins */
+    animation-fill-mode: backwards;
 }
