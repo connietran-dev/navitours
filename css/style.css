@@ -60,6 +60,9 @@ body {
     
     /* Shift -50% x and y of the div's width and height */
     transform: translate(-50%, -50%);
+
+    /* Align button */
+    text-align: center;
 }
 
 .heading-primary {
@@ -68,6 +71,8 @@ body {
 
     /* Back part of heading should be hidden during animation */
     backface-visibility: hidden;
+
+    margin-bottom: 60px; 
 }
 
 .heading-primary-main {
@@ -134,4 +139,31 @@ body {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+
+    /* Enable all properties for animation on initial btn state */
+    /* Enables smooth animations */
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
 }
