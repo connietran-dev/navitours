@@ -56,18 +56,18 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     height: 3.5rem;
 }
 
 /* Text box in header */
-.text-box {
+.header__text-box {
     position: absolute;
 
     /* Top/left in relation to the parent element */
@@ -93,7 +93,7 @@ body {
 }
 
 /* "Outdoors" */
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -111,7 +111,7 @@ body {
 }
 
 /* "is where life happens" */
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -201,7 +201,7 @@ body {
     transform: translateY(-1px);
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -225,7 +225,7 @@ body {
 }
 
 /* Also create pseudo element for .btn-white */
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -235,7 +235,7 @@ body {
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     /* Include .75s delay */
     animation: moveInBottom .5s ease-out .75s;
 
