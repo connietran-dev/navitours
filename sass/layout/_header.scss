@@ -1,0 +1,41 @@
+/* Background image */
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        $color-primary-dark),
+    url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    /* Creates a clipping region in a polygon where image is still visible */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    // Selects .header__logo-box, etc.
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+    
+    /* Text box in header */
+    &__text-box {
+        position: absolute;
+    
+        /* Top/left in relation to the parent element */
+        top: 40%;
+        left: 50%;
+        
+        /* Shift -50% x and y of the div's width and height */
+        transform: translate(-50%, -50%);
+    
+        /* Align button */
+        text-align: center;
+    }
+}

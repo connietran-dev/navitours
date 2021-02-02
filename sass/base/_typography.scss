@@ -1,0 +1,52 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    /* 1.7 higher than default line-height */
+    line-height: 1.7; 
+    color: $color-grey-dark;
+
+    /* Create white border */
+    padding: 3rem; 
+}
+
+/* h1 */
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+
+    /* Back part of heading should be hidden during animation */
+    backface-visibility: hidden;
+
+    margin-bottom: 6rem; 
+
+    /* "Outdoors" */
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+
+        /* Properties for animation */
+        animation-name: moveInLeft;
+        animation-duration: 2.5s;
+        animation-timing-function: ease-out;
+
+        /* 
+        animation-iteration-count: 3;
+        animation-delay: 1s; 
+        */
+    }
+
+    /* "is where life happens" */
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+
+        /* Shorthand for delcaring animation properties */
+        animation: moveInRight 2s ease-in;
+    }
+}
