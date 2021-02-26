@@ -1,0 +1,9 @@
+// Append a pseudo-element after the element to clear floats
+@mixin clearfix {
+    &::after {
+        // Need to have empty content or else pseudo-element will not appear on the page but with no text 
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
