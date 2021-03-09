@@ -1,7 +1,7 @@
 .row {
     // Creating 1140px max-width
     max-width: $grid-width;
-    background-color: #eee;
+    // background-color: #eee;
     margin: 0 auto;
     
     // Select everything but last-child
@@ -19,8 +19,8 @@
     // class* - contains col-
     // class$ - ends with col-
     [class^="col-"] {
-        color: $color-white;
-        background-color: $color-primary;
+        // color: $color-white;
+        // background-color: $color-primary;
 
         float: left;
         

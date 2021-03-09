@@ -1,0 +1,45 @@
+.composition {
+    // position: absolute are now positioned relative to top-left of .composition element
+    position: relative;
+
+    &__photo {
+        // Always define width of images in percentages to make it responsive
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        border-radius: 2px;
+        transition: all .2s;
+        outline-offset: 2rem;
+
+        // 0,0 coordinate is top-left of .composition element
+        position: absolute;
+
+        &--p1 {
+            left: 0;
+            top: -2rem;
+        }
+
+        &--p2 {
+            right: 0rem;
+            top: 2rem;
+        }
+
+        &--p3 {
+            // Use percentage for responsiveness
+            left: 20%;
+            top: 10rem;
+        }
+
+        &:hover {
+            outline: 1.5rem solid $color-primary;
+            transform: scale(1.05) translateY(-.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            z-index: 20;
+        }
+    }
+
+    // composition:hover composition__photo:not(:hover)
+    &:hover &__photo:not(:hover) {
+        transform: scale(.95);
+    }
+
+}
