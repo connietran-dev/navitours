@@ -50,3 +50,20 @@ body {
         animation: moveInRight 2s ease-in;
     }
 }
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text; // Clip background gradient to exactly where text sits
+    color: transparent; // Set text color to transparent to see background-image
+    letter-spacing: .2rem;
+    transition: all .2s; // Set transitions for any animations
+
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    }
+}
