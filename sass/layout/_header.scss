@@ -12,6 +12,7 @@
 
     /* Creates a clipping region in a polygon where image is still visible */
     // Each pair are coordinates away from starting coordinate 0 0
+    --webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); // Does not work on IE or Edge
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
     // Selects .header__logo-box, etc.
