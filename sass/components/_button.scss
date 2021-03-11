@@ -43,6 +43,16 @@
         }
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        /* Also create pseudo element for .btn-white */
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
     &::after {
         content: "";
 
