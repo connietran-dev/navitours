@@ -9,10 +9,29 @@
 html {
     /* Root font-size - This defines what 1rem is */
     /* The default browser size is 16px */
-    /* To get 10px, take 10/16 = 0.625 */
     /* A percentage allows user to zoom */
+    font-size: 62.5%;     /* To get 10px, take 10/16 = 0.625; thus, 1rem = 10px by default */
 
-    font-size: 62.5%;
+    // For example: If width is 500, if tab-port was first, both tab-port and tab-land would apply with the last 
+    // Thus, we need to put larger media queries first 
+
+    @include respond(big-desktop) {
+        font-size: 75%; // If I want 1rem = 12px, then I need 12/16 = 75%
+    }
+
+    // Checks if width < 1200?
+    @include respond(tablet-landscape) {
+        font-size: 56.25%; // If I want 1rem = 9px, then I need 9/16 = 56.25%
+    }
+
+    // width < 900?
+    @include respond(tablet-portrait) {
+        font-size: 50%; // If I want 1rem = 8px, then I need 8/16 = 50%
+    }
+
+    @include respond(phone) {
+        font-size: 37.5%; // 1rem = 6px
+    }
 }
 
 body {
