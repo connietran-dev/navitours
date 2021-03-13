@@ -12,11 +12,14 @@
 // MEDIA QUERY MANAGER
 
 /* 
-0-600 px:       Phone
-600-900 px:     Tablet portrait
+0-600px:       Phone
+600-900px:     Tablet portrait
 900-1200px:     Tablet landscape
 1200-1800px:    where our normal styles are applied
 1800+px:        Big desktop
+
+ORDER of adjustments: [ Base + typography > general layout + grid ] > page layout > components
+
 */
 
 @mixin respond($breakpoint) {

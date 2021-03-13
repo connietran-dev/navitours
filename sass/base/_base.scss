@@ -6,6 +6,14 @@
     box-sizing: inherit;
 }
 
+/* 
+0-600px:       Phone
+600-900px:     Tablet portrait
+900-1200px:     Tablet landscape
+1200-1800px:    where our normal styles are applied
+1800+px:        Big desktop
+*/
+
 html {
     /* Root font-size - This defines what 1rem is */
     /* The default browser size is 16px */
@@ -14,26 +22,28 @@ html {
 
     // For example: If width is 500, if tab-port was first, both tab-port and tab-land would apply with the last 
     // Thus, we need to put larger media queries first 
-
-    @include respond(big-desktop) {
-        font-size: 75%; // If I want 1rem = 12px, then I need 12/16 = 75%
-    }
-
+    
     // Checks if width < 1200?
     @include respond(tablet-landscape) {
         font-size: 56.25%; // If I want 1rem = 9px, then I need 9/16 = 56.25%
     }
-
+    
     // width < 900?
     @include respond(tablet-portrait) {
         font-size: 50%; // If I want 1rem = 8px, then I need 8/16 = 50%
     }
-
-    @include respond(phone) {
-        font-size: 37.5%; // 1rem = 6px
+    
+    @include respond(big-desktop) {
+        font-size: 75%; // If I want 1rem = 12px, then I need 12/16 = 75%
     }
+
 }
 
 body {
     box-sizing: border-box;
+    padding: 3rem; /* Create white border */
+
+    @include respond(tablet-portrait) {
+        padding: 0; // Remove white border on tablet portrait or smaller
+    }
 }
