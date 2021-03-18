@@ -3,20 +3,37 @@
     padding: 10rem 0;
     font-size: 1.4rem;
 
+    @include respond(tablet-portrait) {
+        padding: 8rem 0;
+    }
+
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
+
+        @include respond(tablet-landscape) {
+            margin-bottom: 6rem;
+        }
     }
 
     &__logo {
         width: 15rem;
         height: auto;
+
+        @include respond(tablet-landscape) {
+            width: 12rem;
+        } 
     }
 
     &__navigation {
         border-top: 1px solid $color-grey-dark;
         padding-top: 2rem;
         display: inline-block;
+
+        @include respond(tablet-portrait) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__list {
@@ -55,5 +72,12 @@
         padding-top: 2rem;
         width: 90%;
         float: right;
+
+        @include respond(tablet-portrait) {
+            width: 100%;
+            text-align: center;
+
+            float: none;
+        }
     }
 }

@@ -15,6 +15,7 @@
 
     @include respond(tablet-portrait) {
         max-width: 50rem;
+        padding: 0 3rem;
     }
 
     // .row::after { }
