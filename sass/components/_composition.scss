@@ -1,6 +1,7 @@
 .composition {
     // position: absolute are now positioned relative to top-left of .composition element
     position: relative;
+    z-index: 1;
 
     &__photo {
         // Always define width of images in percentages to make it responsive

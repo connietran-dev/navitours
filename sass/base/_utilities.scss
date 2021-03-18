@@ -2,8 +2,21 @@
     text-align: center;
 }
 
-.utility-margin-bottom-8 { margin-bottom: 8rem; }
-.utility-margin-bottom-big { margin-bottom: 8rem; }
+.utility-margin-bottom-med { 
+    margin-bottom: 4rem; 
+
+    @include respond(tablet-portrait) {
+        margin-bottom: 3rem;
+    }
+}
+
+.utility-margin-bottom-big { 
+    margin-bottom: 8rem;
+
+    @include respond(tablet-portrait) {
+        margin-bottom: 5rem;
+    }
+}
 
 .utility-margin-top-big { margin-bottom: 8rem; }
 .utility-margin-top-huge { margin-bottom: 10rem; }

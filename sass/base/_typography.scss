@@ -72,6 +72,7 @@ body {
 
     @include respond(tablet-portrait) {
         font-size: 3rem;
+        padding: 0 1rem;
     }
 
     @include respond(phone) {
