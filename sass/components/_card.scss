@@ -29,6 +29,7 @@
         &--back {
             // Transform the back of the card b/c text is rotated 180deg
             transform: rotateY(180deg);
+            z-index: -1;
 
             &--1 {
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
