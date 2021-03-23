@@ -11,13 +11,14 @@
 
         /* Enable all properties for animation on initial btn state */
         /* Enables smooth animations */
-        transition: all .2s;
+        transition: all .4s .2s;
 
         position: relative;
         font-size: $default-font-size;
     }
 
     &:hover {
+        transition: all .4s .2s;
         transform: translateY(-3px);
         box-shadow: 0 .5rem 2rem rgba($color-black,.2);
 
@@ -97,6 +98,7 @@
         background-color: $color-primary;
         color: $color-white;
         box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transition: all .2s .1s;
         transform: translateY(-2px);
     }
     

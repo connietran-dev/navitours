@@ -16,8 +16,14 @@
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
     // Adjust angle of polygon on mobile
+    @include respond(tablet-portrait) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 85vh);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 85vh);
+    }
+
+    // Adjust angle of polygon on mobile
     @include respond(phone) {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 80vh); // Does not work on IE or Edge
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 80vh);
         clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 80vh);
     }
     

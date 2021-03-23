@@ -107,11 +107,7 @@ body {
     /* Properties for animation */
     animation-name: moveInLeft;
     animation-duration: 2.5s;
-    animation-timing-function: ease-out;
-    /* 
-        animation-iteration-count: 3;
-        animation-delay: 1s; 
-        */ }
+    animation-timing-function: linear; }
     @media (max-width: 37.5em) {
       .heading-primary--main {
         letter-spacing: 1rem;
@@ -190,10 +186,11 @@ body {
     border-radius: 10rem;
     /* Enable all properties for animation on initial btn state */
     /* Enables smooth animations */
-    transition: all .2s;
+    transition: all .4s .2s;
     position: relative;
     font-size: 1.6rem; }
   .btn:hover {
+    transition: all .4s .2s;
     transform: translateY(-3px);
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
     /* On button :hover, display ::after effects */ }
@@ -246,6 +243,7 @@ body {
   background-color: #55c57a;
   color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transition: all .2s .1s;
   transform: translateY(-2px); }
 
 .btn-text:active {
@@ -262,7 +260,7 @@ body {
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-    transition: all .8s ease;
+    transition: all .8s .2s ease;
     position: absolute;
     top: 0;
     left: 0;
@@ -556,6 +554,10 @@ body {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* Text box in header */ }
+  @media (max-width: 56.25em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 85vh);
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 85vh); } }
   @media (max-width: 37.5em) {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 80vh);
@@ -583,6 +585,9 @@ body {
   @media (max-width: 56.25em) {
     .section-about {
       padding: 20rem 0;
+      margin-top: -20vh; } }
+  @media (max-width: 37.5em) {
+    .section-about {
       margin-top: -30vh; } }
 
 .section-features {
