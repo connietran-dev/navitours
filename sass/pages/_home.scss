@@ -5,6 +5,7 @@
 
     @include respond(tablet-portrait) {
         padding: 20rem 0;   // Reduce padding
+        margin-top: -30vh; // Account for blank triangle created by polygon in header
     }
 }
 

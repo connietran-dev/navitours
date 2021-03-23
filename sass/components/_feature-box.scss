@@ -8,7 +8,7 @@
     transition: transform .3s;
 
     @include respond(tablet-portrait) {
-        padding: 2rem;   
+        padding: 4rem;
     }
     
     &:hover {
