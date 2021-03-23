@@ -6,6 +6,10 @@
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     transition: transform .3s;
+
+    @include respond(tablet-portrait) {
+        padding: 2rem;   
+    }
     
     &:hover {
         transform: translateY(-1.5rem) scale(1.03);
@@ -18,5 +22,9 @@
         background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
         -webkit-background-clip: text; // Clip background gradient to exactly where text sits
         color: transparent; // Set text color to transparent to see background-image
+
+        @include respond(tablet-portrait) {
+            margin-bottom: 0;
+        }
     }
 }
