@@ -235,7 +235,21 @@
 
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="img/logo-green-2x.png" alt="Full Navitours logo" class="footer__logo">
+
+            <!-- Art direction to use image depending on screen width -->
+            <!-- Use mulitple sources for images -->
+            <picture class="footer__logo">
+                <!-- Always use at least one source -->
+                <!-- At max-width of phone, use 1x small -->
+                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x, 2x" 
+                        media="(max-width: 37.5em)">
+
+                <!-- If larger than 600px, then use img below -->
+                <!-- Density switching in HTML -->
+                <!-- Browser will determine best image for device with high vs low resolution screen -->
+                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full Navitours logo">
+            </picture>
+
         </div>
         <div class="row">
             <div class="col-1-of-2">
