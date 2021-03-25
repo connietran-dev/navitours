@@ -1,6 +1,6 @@
 /* Background image */
 .header {
-    height: 95vh;
+    height: 85vh;
 
     // hero-small is fine for regular screens
     background-image: linear-gradient(
@@ -15,7 +15,9 @@
 
     // 192dpi is resolution of Apple retina screen
     // If larger than 192dpi (2x screen) and 600px width, load larger hero
+    // For Safari, if resolution is pixel ratio is at least 2x
     @media (min-resolution: 192dpi) and (min-width: 37.5em), 
+            (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
             (min-width: 125em) {
         background-image: linear-gradient(
             to right bottom, 
@@ -24,10 +26,15 @@
         url(../img/hero.jpg);
     }
 
-    /* Creates a clipping region in a polygon where image is still visible */
-    // Each pair are coordinates away from starting coordinate 0 0
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); // Does not work on IE or Edge
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    // Check if browser supports clip-path - Firefox does not
+    // 0 0 properties don't actually matter
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        /* Creates a clipping region in a polygon where image is still visible */
+        // Each pair are coordinates away from starting coordinate 0 0
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); // Support for IE or Edge
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
 
     // Adjust angle of polygon on mobile
     @include respond(tablet-portrait) {

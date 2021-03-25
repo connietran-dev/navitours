@@ -20,6 +20,7 @@
         width: 100%;
         
         // Hides the backside of the element
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
 
         &--front {
