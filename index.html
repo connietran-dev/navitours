@@ -58,24 +58,25 @@
                     <div class="composition">
 
                         <!-- Density & Resolution Switching: Allow browser to decide for viewport and display/pixel density -->
+                        <!-- srcset We have 2 images with diff pixel widths -->
                         <!-- Specify width to describe width of images -->
                         <!-- The sizes gives approximate size at different viewports -->
-                        <!-- Get width of image 171px / 900px = 20% -->
+                        <!-- Get width of image 171px / 900px = 20% = 20vw -->
                         <!-- Include src for older browsers -->
                         <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
-                            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" 
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" 
                             alt="Scenic photo of large rock in distance and trees with placid stream in foreground"
                             class="composition__photo composition__photo--p1"
                             src="img/nat-1-large.jpg">
 
                         <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
-                            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" 
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" 
                             alt="Person biking on road that winds through mountains"
                             class="composition__photo composition__photo--p2"
                             src="img/nat-2-large.jpg">
 
                         <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
-                            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px" 
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" 
                             alt="Person hiking on trail that goes along tops of mountains"
                             class="composition__photo composition__photo--p3"
                             src="img/nat-3-large.jpg">
@@ -260,7 +261,7 @@
     <footer class="footer">
         <div class="footer__logo-box">
 
-            <!-- Art direction to use image depending on screen width -->
+            <!-- Art Direction: Force browser to use image depending on screen width -->
             <!-- Use mulitple sources for images -->
             <picture class="footer__logo">
                 <!-- Always use at least one source -->
