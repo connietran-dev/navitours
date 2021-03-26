@@ -170,7 +170,15 @@
     }
 
     // Rewrite card structure
-    @include respond(tablet-portrait) {
+
+    // @include respond(tablet-portrait) {
+    
+    // Display card with price when screen is smaller than tablet portrait
+    // and device does not have hover, ie, is touch device, like iPad
+    // If you wanted to target opposite, use hover: hover
+    @media only screen and (max-width: 56.25em),
+            only screen and (hover: none) {
+
         // We no longer need to make the front/back the same height
         height: auto; 
         border-radius: 3px;

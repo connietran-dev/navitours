@@ -47,3 +47,8 @@ body {
         padding: 0; // Remove white border on tablet portrait or smaller
     }
 }
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
