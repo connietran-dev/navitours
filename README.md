@@ -22,4 +22,12 @@
 - CSS autoprefixing
 - Modern CSS techniques: clip-path, background-clip, background-blend-mode, transform
 
+### Fully Mobile Responsive
+
+<div align="center">
+    <a href="https://connietran-dev.github.io/navitours-responsive" target="_blank">
+        <img src="navitours-mobile.gif" alt="Navitours landing page shown responsive to browser width" />
+    </a>
+</div>
+
 This page was developed as part of the Advanced CSS and Sass: Flexbox, Grid, Animations and More course on [Udemy](https://www.udemy.com/share/101WkwAEEbcFtRRHkJ/).
