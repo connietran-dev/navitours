@@ -1,14 +1,14 @@
 # Navitours
 
 <div align="center">
-    <a href="https://connietran-dev.github.io/navitours-responsive" target="_blank">
+    <a href="https://connietran-dev.github.io/navitours" target="_blank">
         <img src="navitours-demo.gif" alt="Navitours landing page" />
     </a>
 </div>
 
 ## About Navitours
 
-[Navitours](https://connietran-dev.github.io/navitours-responsive) is a landing page for a fictional company that specializes in offering nature tours. This page was developed with:
+[Navitours](https://connietran-dev.github.io/navitours) is a landing page for a fictional company that specializes in offering nature tours. This page was developed with:
 
 - Sass / SCSS
 - Sass nesting, variables, partials, imports, and mixins
@@ -25,7 +25,7 @@
 ### Fully Mobile Responsive
 
 <div align="center">
-    <a href="https://connietran-dev.github.io/navitours-responsive" target="_blank">
+    <a href="https://connietran-dev.github.io/navitours" target="_blank">
         <img src="navitours-mobile.gif" alt="Navitours landing page shown responsive to browser width" />
     </a>
 </div>
