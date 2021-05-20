@@ -15,6 +15,14 @@
         background-color: $color-white;
         border-radius: 50%;
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
+
+        text-align: center;
+        cursor: pointer;
+
+        @include respond(tablet-portrait) {
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     &__background {
@@ -35,6 +43,14 @@
         // Use cubic-bezier for your own custom easing timing function
         // ie, how much change occurs over time
         transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);  
+
+        @include respond(tablet-portrait) {
+            top: 3.5rem;
+            right: 3.5rem;
+
+            height: 5rem;
+            width: 5rem;
+        }
     }
 
     &__nav {
@@ -61,6 +77,10 @@
         text-align: center;
 
         width: 100%; // Set width so there's no weird transition when opening nav
+
+        @include respond(tablet-portrait) {
+            top: 45%;
+        }
     }
 
     &__item {
@@ -101,7 +121,7 @@
 
     }
 
-    /** Checkbox Hack for Navigation **/
+    /** CHECKBOX HACK FOR NAVIGATION **/
 
     // For Background
     // Select checked pseudoclass's general sibling selector ~ which selects all siblings of __background
@@ -116,4 +136,62 @@
         opacity: 1; 
         width: 100%;
     }
+
+    /** HAMBURGER MENU ICON **/
+    
+    // To get hamburger icon, we're creating before/after pseudoelements
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+
+        // Shared styles between icon span, before & after
+        &,
+        &::before, 
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark;
+            display: inline-block;
+        }
+
+        &::before, 
+        &::after {
+            content: "";
+            position: absolute; // position relative to just the icon
+            left: 0;
+
+            transition: all .3s;
+        }
+
+        // Can also use translate but we chose to use positioning
+        &::before { top: -.8rem; }
+        &::after { top: .8rem; }
+    }
+
+    // Select icon::before pseuoelement
+    &__button:hover &__icon::before {
+        top: -1rem;
+    }
+
+    &__button:hover &__icon::after {
+        top: 1rem;
+    }
+
+    // When checkbox is checked, select adjacent __button sibling and then select __button's child, which is the __icon
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;  // Use transparent instead of using width since before/after rely on width
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        // Set top to 0 or else it rotates around wrong axis
+        // You could also use transform-origin
+        top: 0;
+        transform: rotate(135deg); // 180 degrees - 45 degrees
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
 }
