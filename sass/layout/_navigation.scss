@@ -14,6 +14,7 @@
         width: 7rem;
         background-color: $color-white;
         border-radius: 50%;
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
     }
 
     &__background {
@@ -30,18 +31,25 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
 
-        // When open, make background take over screen
-        transform: scale(80);
+        // Transition transform only
+        // Use cubic-bezier for your own custom easing timing function
+        // ie, how much change occurs over time
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);  
     }
 
     &__nav {
         z-index: 1500;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;    // Move in from left for animation
                 
         height: 100vh;
-        width: 100%;
+
+        // Set so default state is to hide nav
+        opacity: 0;
+        width: 0;
+
+        transition: all .8s cubic-bezier(.62,-0.04,.21,1.21);
     }
 
     &__list {
@@ -51,6 +59,8 @@
         transform: translate(-50%, -50%);
         list-style: none;
         text-align: center;
+
+        width: 100%; // Set width so there's no weird transition when opening nav
     }
 
     &__item {
@@ -89,5 +99,21 @@
             transform: translateX(1rem);
         }
 
+    }
+
+    /** Checkbox Hack for Navigation **/
+
+    // For Background
+    // Select checked pseudoclass's general sibling selector ~ which selects all siblings of __background
+    // So when checkbox is checked, scale(80) the background
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);   // Increase the size to completely cover screen
+    }
+
+    // For Nav Items
+    // Don't hide any longer when checked
+    &__checkbox:checked ~ &__nav {
+        opacity: 1; 
+        width: 100%;
     }
 }
